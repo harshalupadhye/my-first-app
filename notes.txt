@@ -1,0 +1,6 @@
+npm install -g @angular/cli --> once only as it is a global installation
+
+ng new my-app--> once the cli is installed then ng command can be used then use this command to create project here name is my-app
+
+cd my-app
+ng serve --open --> to ru  server
