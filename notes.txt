@@ -8,3 +8,5 @@ ng serve --open --> to ru  server
 
 ng generate component component/new-component 
 component/new-component is path and folder names
+
+ng generate service employee
