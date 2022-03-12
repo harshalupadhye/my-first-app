@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-see-all',
   templateUrl: './see-all.component.html',
@@ -10,8 +11,20 @@ export class SeeAllComponent implements OnInit {
   employeeList: any
   isSearch : boolean = false
   id : string = ''
-  constructor(public employees : EmployeeService, private activeRoutes : ActivatedRoute) {}
+  url : string = ''
 
+  constructor(public employees : EmployeeService, private activeRoutes : ActivatedRoute, private router: Router) {}
+
+  editEmployee = (id: string) =>{
+    this.url = `create?id=${id}`
+    this.router.navigateByUrl(this.url)
+  }
+  deleteEmployee = (id: string) =>{
+    this.employees.deleteEmployeesById(id).subscribe(list =>{
+      this.employeeList = [list]
+      console.log(this.employeeList)
+    })
+  }
  ngOnInit() {
    this.activeRoutes.queryParams.subscribe(param =>{
    this.id = param["id"]

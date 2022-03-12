@@ -15,5 +15,14 @@ export class EmployeeService {
     let getEmployeeURL = `http://localhost:8000/employees/${id}`
     return this.http.get(getEmployeeURL)
   }
+  postEmployees =  (employee: Object) => {
+    let getEmployeeURL = `http://localhost:8000/employees`
+    return this.http.post(getEmployeeURL, employee)
+  }
+  deleteEmployeesById =  (id: string) => {
+    console.log('deleting....')
+    let getEmployeeURL = `http://localhost:8000/employees/${id}`
+    return this.http.delete(getEmployeeURL)
+  }
 
 }

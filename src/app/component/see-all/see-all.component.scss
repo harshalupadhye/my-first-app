@@ -16,12 +16,12 @@
     box-shadow: 0 8px 16px rgba(11,11,18,.08);
     border-radius: 10.1322px;
     margin: 10px 0px;
-    min-height: 120px;
+    min-height: 200px;
     .header{
         display: flex;
         background: #BDBDBD;
         justify-content: center;
-        height: 25%;
+        height: 15%;
         border-top-left-radius:10.1322px;
         border-top-right-radius:10.1322px;
         h4{
@@ -30,7 +30,7 @@
 
     }
     .body{
-        height: 75%;
+        height: 65%;
         display: flex;
         align-items: center ;
         padding:0px 10px;
@@ -41,6 +41,21 @@
             font-size: 16px;
             line-height: 125.5%;
         }
+    }
+    .buttons{
+      display: flex;
+      justify-content: space-evenly;
+      :nth-child(1),
+      :nth-child(2){
+        background: #BDBDBD;
+        color: rgba(11, 11, 18, 0.6);;
+        font-weight: 700;
+        border-color:#BDBDBDfb;
+        border-radius: 32px;
+        width: 171px;
+        height: 32px;
+        font-size: 20px;
+      }
     }
   }
   &--employee:hover{
