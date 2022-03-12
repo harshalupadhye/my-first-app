@@ -15,9 +15,10 @@ export class SeeAllComponent implements OnInit {
 
   constructor(public employees : EmployeeService, private activeRoutes : ActivatedRoute, private router: Router) {}
 
-  editEmployee = (id: string) =>{
-    this.url = `create?id=${id}`
-    this.router.navigateByUrl(this.url)
+  editEmployee = (employee: any) =>{
+    console.log(employee)
+    this.url = `create?id=${employee.id}`
+    this.router.navigateByUrl(this.url, {state: employee})
   }
   deleteEmployee = (id: string) =>{
     this.employees.deleteEmployeesById(id).subscribe(list =>{

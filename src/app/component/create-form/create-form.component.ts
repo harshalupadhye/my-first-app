@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
-
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-create-form',
   templateUrl: './create-form.component.html',
@@ -15,7 +16,7 @@ export class CreateFormComponent implements OnInit {
   salary : string = ''
   email : string = ''
   phone : string = ''
-  constructor(private employee : EmployeeService) { }
+  constructor(private employee : EmployeeService, private router: Router, private activeRoute : ActivatedRoute) { }
   getFormValue = () => {
     const employee : Object = {
       id: this.id,
@@ -30,10 +31,19 @@ export class CreateFormComponent implements OnInit {
       phone: this.phone
   }
      this.employee.postEmployees(JSON.stringify(employee)).subscribe(employee =>{
-       console.log(employee)
+       this.router.navigateByUrl("all")
      }) 
   }
   ngOnInit(): void {
+    console.log(history.state)
+    this.id = history.state.id
+    this.name = history.state.name
+    this.department = history.state.designation.department
+    this.role = history.state.designation.role
+    this.address = history.state.address
+    this.salary = history.state.salary
+    this.email = history.state.email
+    this.phone = history.state.phone
   }
 
 }
