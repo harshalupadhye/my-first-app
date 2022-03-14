@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'create', component: CreateFormComponent },
   { path: 'all', component: SeeAllComponent },
+  { path: 'all/:id', component: SeeAllComponent },
   { path: 'search', component: SearchComponent },
 ];
 
