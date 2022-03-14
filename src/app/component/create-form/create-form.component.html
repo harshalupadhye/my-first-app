@@ -18,7 +18,7 @@
             <input class="inputs" style="margin-left: 10px;" type="text" id="email" [(ngModel)]="email" name="email" placeholder="Enter the email"/>
             <label for="phone" style="margin-left: 10px;">Phone</label>
             <input class="inputs" style="margin-left: 10px;" type="text" id="phone"  [(ngModel)]="phone" name="phone" placeholder="Enter the phone number"/>
-            <input class="submit" type="button" value="Create" (click)="getFormValue()"/>
+            <input class="submit" type="button" [attr.value]="isCreate ? 'Create' : 'Update'" (click)="getFormValue()"/>
         </form>
         <img class="create-form--img"src="../../../assets/public/angular.png" width="280"/>
 

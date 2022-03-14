@@ -19,6 +19,11 @@ export class EmployeeService {
     let getEmployeeURL = `http://localhost:8000/employees`
     return this.http.post(getEmployeeURL, employee)
   }
+  updateEmployees =  (employee: Object, id: string) => {
+    console.log(employee)
+    let getEmployeeURL = `http://localhost:8000/employees/${id}`
+    return this.http.put(getEmployeeURL, employee)
+  }
   deleteEmployeesById =  (id: string) => {
     console.log('deleting....')
     let getEmployeeURL = `http://localhost:8000/employees/${id}`

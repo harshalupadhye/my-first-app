@@ -4,6 +4,7 @@
         <form class="create-form--form">
             <label for="id">Unique Identity Number</label>
             <input class="inputs" #id (keyup)="getId(id.value)" type="text"  placeholder="Enter the unique ID"/>
+            <p style="color:red; margin:0">{{err}}</p>
             <input class="submit" type="button" value="Search" (click)="getEmployee()"/>
         </form>
             <img class="create-form--img"src="../../../assets/public/angular.png" width="280"/>

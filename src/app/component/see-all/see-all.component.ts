@@ -8,7 +8,7 @@ import {Router} from '@angular/router'
   styleUrls: ['./see-all.component.scss']
 })
 export class SeeAllComponent implements OnInit {
-  employeeList: any
+  employeeList: any 
   isSearch : boolean = false
   id : string = ''
   url : string = ''
@@ -21,8 +21,9 @@ export class SeeAllComponent implements OnInit {
     this.router.navigateByUrl(this.url, {state: employee})
   }
   deleteEmployee = (id: string) =>{
-    this.employees.deleteEmployeesById(id).subscribe(list =>{
-      this.employeeList = [list]
+     this.employees.deleteEmployeesById(id).subscribe((list) =>{
+       console.log(typeof(list))
+      this.employeeList =  list
       console.log(this.employeeList)
     })
   }
